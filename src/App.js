@@ -5,6 +5,10 @@ import { useState } from 'react'
 function App() {
   const [count, setCount] = useState(0)
 
+  fetch(process.env.REACT_APP_API_URL || "https://localhost:8080/api/v1")
+    .then(() => console.log('Deu certo!'))
+    .catch(() => console.log('Deu errado!'))
+
   return (
     <div className="App">
       <header className="App-header">
